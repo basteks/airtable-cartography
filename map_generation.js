@@ -9,23 +9,24 @@ const config = input.config({
             label: 'Table',
             description: 'Table containing the records you want to visualize'
         }),
-		input.config.view('vue', {
-            label: 'Vue',
+		input.config.view('view', {
+            label: 'View',
             description: 'The view containing the records',
             parentTable: 'table',
         }),
         input.config.field('lat', {
             label: 'Latitude',
-			description : 'The latitude field',
+			description : 'The latitude field (number type)',
             parentTable: 'table',
         }),
         input.config.field('lon', {
             label: 'Longitude',
-			description : 'The longitude field',
+			description : 'The longitude field (number type)',
             parentTable: 'table',
         }),
         input.config.field('title', {
-            label: "The field containing the title of each marker's popup",
+            label: 'Title',
+            description: "The field containing the title of each marker's popup",
             parentTable: 'table',
         }),
         input.config.select('group', {
@@ -37,14 +38,15 @@ const config = input.config({
             ]
         }),
         input.config.text('popupContent', {
-            label: "Text to display in the popup for each record (for a first use, write anything, we will configure it during first script run)",
+            label: 'Popup content',
+            description: "The text to display in the popup for each record (for a first use, write anything, we will configure it during first script run)",
         }),
     ]
 });
 
 const mapURL = config.url;
 const table = config.table;
-const view = config.vue;
+const view = config.view;
 const lat = config.lat;
 const lon = config.lon;
 const title = config.title;
