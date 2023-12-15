@@ -19,5 +19,11 @@ Here are the available settings :
 - *Grouping* : a Yes/No option to choose if you want to group your records by the title
 - *Popup content* : the text to display in the popup for each record. For the  first run, you can write anything, it will be configured during later. Afterwards, you will have to copy/paste the desired string here, composed of fields' names between curly brackets, for example `{First Name} {Last Name} : {Age}`)
 
+## Limitations
+As all the displayed data (GPS coordinates and data to display on popup) are passed through the URI of the map, you may encounter a _414 URI Too Long_ error if you try to display too much markers or too much data for each marker on your map
+
 ## ToDo
 - Add support for special field rendering like URLs, mails or attachment by creating an html `href` link
+
+## Credits
+Based on the great [Leaflet](https://leafletjs.com/) JavaScript library for interactive maps !
