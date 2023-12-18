@@ -1,5 +1,3 @@
-
-
 # Airtable Cartography
 
 A script that allows you to visualize your records on a map, based on the [Airtable Extensions](https://support.airtable.com/docs/airtable-extensions-overview).
