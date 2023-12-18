@@ -22,6 +22,7 @@ As all the displayed data (GPS coordinates and data to display on popup) are pas
 
 ## ToDo
 - Add support for special field rendering like URLs, mails or attachment by creating an html `href` link.
+- Convert this script to a proper extension in order to avoid the basemap.html file hosting and to get rid of the potential 414 URI Too Long error.
 
 ## Credits
 Based on the great [Leaflet](https://leafletjs.com/) JavaScript library for interactive maps !
