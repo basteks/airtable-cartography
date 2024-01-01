@@ -3,7 +3,7 @@
 A script that allows you to visualize your records on a map, based on the [Airtable Extensions](https://support.airtable.com/docs/airtable-extensions-overview).
 
 ## Usage
-- the basemap.html file needs to be hosted somewhere (you can use [https://basteks.github.io/basemap.html](https://basteks.github.io/basemap.html) for testing purpose only)
+- the basemap.html file and the dist folder need to be hosted somewhere (you can use [https://basteks.github.io/basemap.html](https://basteks.github.io/basemap.html) for testing purpose only)
 - the content of the map_generation.js file needs to be copied in a new Scripting Extension in your Airtable base (warning, Extensions are not available with free plan !)
 
 Once you create your Extension, access the settings page by clicking the gear icon in the top right corner
