@@ -9,6 +9,7 @@ A script that allows you to visualize your records on a map, based on the [Airta
 Once you create your Extension, access the settings page by clicking the gear icon in the top right corner
 Here are the available settings :
 - *URL* of the basemap.html file
+- *Current location* : a Yes/No option to choose if you want to display your current location on the map
 - *Table* : the table containing the records you want to visualize
 - *View* : the view containing the records
 - *Latitude* : the latitude field (**number type**)
@@ -25,4 +26,4 @@ As all the displayed data (GPS coordinates and data to display on popup) are pas
 - Convert this script to a proper extension in order to avoid the basemap.html file hosting and to get rid of the potential 414 URI Too Long error.
 
 ## Credits
-Based on the great [Leaflet](https://leafletjs.com/) JavaScript library for interactive maps !
+Based on the great [Leaflet](https://leafletjs.com/) JavaScript library for interactive maps, and on the [Leaflet.awesome-markers](https://github.com/lennardv2/Leaflet.awesome-markers) plugin (this version only allow color on markers, but no icons yet)
