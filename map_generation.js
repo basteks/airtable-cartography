@@ -5,6 +5,14 @@ const config = input.config({
         input.config.text('url', {
             label: 'URL of the basemap.html file',
         }),
+        input.config.select('curPos', {
+            label: 'Current location',
+            description: 'Would you like to display your current location on the map ?',
+            options: [
+                {label: 'Yes', value: 'yes'},
+                {label: 'No', value: 'no'}
+            ]
+        }),
         input.config.table('table', {
             label: 'Table',
             description: 'Table containing the records you want to visualize'
@@ -46,6 +54,7 @@ const config = input.config({
 
 const mapURL = config.url;
 const table = config.table;
+const curPos = config.curPos;
 const view = config.view;
 const lat = config.lat;
 const lon = config.lon;
@@ -166,7 +175,12 @@ else {
 		}
 		markersStr+= encodeURI(marker["title"]+','+marker["lat"]+","+marker["lon"]+","+listeData)
 	}
-	output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
+	if (curPos == 'yes') {
+		output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?p=true?mrks="+markersStr+")");
+	}
+	else {
+		output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
+	}
     let displayMarkers = await input.buttonsAsync("Would you like to display the markers' data?", ['Yes', 'No']);
     if (displayMarkers == 'Yes') {
         output.markdown("**List of the markers on the map**:");
