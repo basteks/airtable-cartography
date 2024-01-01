@@ -5,6 +5,14 @@ const config = input.config({
         input.config.text('url', {
             label: 'URL du fichier basemap.html',
         }),
+        input.config.select('curPos', {
+            label: 'Position actuelle',
+            description: 'Souhaitez-vous afficher votre position actuelle sur la carte ?',
+            options: [
+                {label: 'Oui', value: 'yes'},
+                {label: 'Non', value: 'no'}
+            ]
+        }),
         input.config.table('table', {
             label: 'Table',
             description: 'La table dans laquelle se trouvent les données à cartographier'
@@ -45,6 +53,7 @@ const config = input.config({
 });
 
 const mapURL = config.url;
+const curPos = config.curPos;
 const table = config.table;
 const view = config.view;
 const lat = config.lat;
@@ -166,7 +175,12 @@ else {
 		}
 		markersStr+= encodeURI(marker["title"]+','+marker["lat"]+","+marker["lon"]+","+listeData)
 	}
-	output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
+	if (curPos == 'yes') {
+		output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?p=true?mrks="+markersStr+")");
+	}
+	else {
+		output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
+	}
 	let displayMarkers = await input.buttonsAsync("Souhaitez-vous afficher les données des markers ?", ['Oui', 'Non']);
     if (displayMarkers == 'Oui') {
         output.markdown("**Liste des markers présents sur la carte**:");
