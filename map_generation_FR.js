@@ -9,7 +9,8 @@ const config = input.config({
             label: 'Position actuelle',
             description: 'Souhaitez-vous afficher votre position actuelle sur la carte ?',
             options: [
-                {label: 'Oui', value: 'yes'},
+                {label: 'Statique (une seule position)', value: 'static'},
+		{label: 'Dynamique (suit votre position)', value: 'track'},
                 {label: 'Non', value: 'no'}
             ]
         }),
@@ -175,12 +176,7 @@ else {
 		}
 		markersStr+= encodeURI(marker["title"]+','+marker["lat"]+","+marker["lon"]+","+listeData)
 	}
-	if (curPos == 'yes') {
-		output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?p=true?mrks="+markersStr+")");
-	}
-	else {
-		output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
-	}
+	output.markdown("[Cliquez sur ce lien pour accéder à la carte]("+mapURL+"?t="+mapTitle+"?p="+curPos+"?mrks="+markersStr+")");
 	let displayMarkers = await input.buttonsAsync("Souhaitez-vous afficher les données des markers ?", ['Oui', 'Non']);
     if (displayMarkers == 'Oui') {
         output.markdown("**Liste des markers présents sur la carte**:");
