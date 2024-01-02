@@ -9,7 +9,8 @@ const config = input.config({
             label: 'Current location',
             description: 'Would you like to display your current location on the map ?',
             options: [
-                {label: 'Yes', value: 'yes'},
+                {label: 'Static (only once)', value: 'static'},
+		{label: 'Track (updates automatically)', value: 'track'},
                 {label: 'No', value: 'no'}
             ]
         }),
@@ -175,12 +176,7 @@ else {
 		}
 		markersStr+= encodeURI(marker["title"]+','+marker["lat"]+","+marker["lon"]+","+listeData)
 	}
-	if (curPos == 'yes') {
-		output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?p=true?mrks="+markersStr+")");
-	}
-	else {
-		output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?mrks="+markersStr+")");
-	}
+	output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?p="+curPos+"?mrks="+markersStr+")");
     let displayMarkers = await input.buttonsAsync("Would you like to display the markers' data?", ['Yes', 'No']);
     if (displayMarkers == 'Yes') {
         output.markdown("**List of the markers on the map**:");
