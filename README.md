@@ -9,7 +9,7 @@ A script that allows you to visualize your records on a map, based on the [Airta
 Once you create your Extension, access the settings page by clicking the gear icon in the top right corner
 Here are the available settings :
 - *URL* of the basemap.html file
-- *Current location* : a Yes/No option to choose if you want to display your current location on the map
+- *Current location* : Would you like to display your current location on the map ? The available options are "no", "static" (gets current location only once) or "track" (updates the marker each time the current location changes)
 - *Table* : the table containing the records you want to visualize
 - *View* : the view containing the records
 - *Latitude* : the latitude field (**number type**)
