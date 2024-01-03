@@ -176,7 +176,7 @@ else {
 		}
 		markersStr+= encodeURI(marker["title"]+','+marker["lat"]+","+marker["lon"]+","+listeData)
 	}
-	output.markdown("[Clic on this link to see the map]("+mapURL+"?t="+mapTitle+"?p="+curPos+"?mrks="+markersStr+")");
+	output.markdown("[Click on this link to see the map]("+mapURL+"?t="+mapTitle+"?p="+curPos+"?mrks="+markersStr+")");
     let displayMarkers = await input.buttonsAsync("Would you like to display the markers' data?", ['Yes', 'No']);
     if (displayMarkers == 'Yes') {
         output.markdown("**List of the markers on the map**:");
